@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
     end)
 end)
 
-local MainMenu = RageUI.CreateMenu("~g~Location", "~c~Choix des voitures");
+local MainMenu = RageUI.CreateMenu("~r~Location", "~c~Choix des voitures", 0, 0, "commonmenu", "interaction_bgd", 0,0,0,1);
 
 Citizen.CreateThread(function()
 	local coords = vector3(-1026.593, -2737.094, 20.16406)
@@ -61,8 +61,7 @@ end)
 
 function RageUI.PoolMenus:Example()
 	MainMenu:IsVisible(function(Items)
-		Items:AddButton("Blista", "Location Blista", { IsDisabled = false, RightBadge = RageUI.BadgeStyle.GoldMedal, 
-        Color = {HighLightColor = RageUI.ItemsColour.PureWhite, BackgroundColor = RageUI.ItemsColour.Red} },function(onSelected)
+		Items:AddButton("Blista", "Location Blista", { IsDisabled = false, RightBadge = RageUI.BadgeStyle.Car},function(onSelected)
 			if onSelected then
 				TriggerServerEvent("buyLoca")
 			end
